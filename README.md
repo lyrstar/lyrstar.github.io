@@ -1,6 +1,6 @@
 [项目地址](https://github.com/lyrstar/lyrstar.github.io)
 
-[查看页面](https://github.com/lyrstar/lyrstar.github.io)
+[查看页面](https://lyrstar.github.io)
 
 ***
 
