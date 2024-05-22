@@ -4,7 +4,7 @@
 
 - [linux](/linux/README.md)
 
-- [mongodb](/mongodb/README.md)
+- [MongoDB](/mongodb/README.md)
 
 - [nginx](/nginx/README.md)
 
