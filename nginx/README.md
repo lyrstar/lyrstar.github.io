@@ -8,7 +8,7 @@
 
 1. 下载nginx和sticky插件
     
-    - [1.9.9nginx下载](http://nginx.org/download/nginx-1.9.9.tar.gz)    
+    - [nginx1.9.9下载](http://nginx.org/download/nginx-1.9.9.tar.gz)    
     - [nginx-sticky下载](https://bitbucket.org/nginx-goodies/nginx-sticky-module-ng/get/master.tar.gz)
 
 2. 解压压缩包
