@@ -1,4 +1,4 @@
-- [回到首页](/README.md)
+- [回到首页](../README.md)
 
 ## openssl 简单的https验证 自签名证书
 

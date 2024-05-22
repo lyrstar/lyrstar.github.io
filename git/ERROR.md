@@ -1,5 +1,5 @@
-- [回到首页](/README.md)
-- [git学习笔记](/git/README.md)
+- [回到首页](../README.md)
+- [git学习笔记](./git/README.md)
 
 
 ## 错误

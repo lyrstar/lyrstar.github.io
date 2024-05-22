@@ -1,5 +1,5 @@
-- [回到首页](/README.md)
-- [git异常处理](/git/ERROR.md)
+- [回到首页](../README.md)
+- [git异常处理](./ERROR.md)
 
 ## 官网
 
