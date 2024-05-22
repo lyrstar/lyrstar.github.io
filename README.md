@@ -2,4 +2,4 @@
 
 ### QQ机器人
 
-[qq-bot](/qq-bot/README.md)
+[查看笔记](/qq-bot/README.md)
