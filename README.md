@@ -1,4 +1,8 @@
-## [lyrstar的学习笔记](https://github.com/lyrstar/lyrstar.github.io)
+[项目地址](https://github.com/lyrstar/lyrstar.github.io)
+
+[查看页面](https://github.com/lyrstar/lyrstar.github.io)
+
+***
 
 - [git](/git/README.md)
 

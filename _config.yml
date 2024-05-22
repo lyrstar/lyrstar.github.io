@@ -1,11 +1,11 @@
 theme: jekyll-theme-slate
 
 # Site settings
-title: Lyrstar Note  #home 页面 博客标题
+title: Lyrstar的学习笔记  #home 页面 博客标题
 SEOTitle: Lyrstar的学习笔记 | Lyrstar Note #浏览器显示标签&名称
 # header-img: img/home-bg.jpg # home 页面 名称
 email: rrlyrstar@163.com  #邮箱
-description: "Every failure is leading towards success."
+description: "水善利万物而不争，处众人之所恶，故几于道。"
 keyword: "lyrstar, note"
 url: "https://lyrstar.github.io/"          # 博客地址
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
