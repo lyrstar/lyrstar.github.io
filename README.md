@@ -1,4 +1,4 @@
-## lyrstar的学习笔记
+## [lyrstar的学习笔记](https://github.com/lyrstar/lyrstar.github.io)
 
 - [git](/git/README.md)
 
