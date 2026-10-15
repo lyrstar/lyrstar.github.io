@@ -21,7 +21,7 @@ email: rrlyrstar@163.com
 # GitHub Pages 已默认启用 jekyll-readme-index（README.md 作为目录首页）
 # 和 jekyll-relative-links（.md 相对链接自动转为站内链接），此处无需重复声明。
 plugins:
-  # seo-tag 实际已随 github-pages 自动生效（主题 layout 中已调用 {% seo %}），
+  # seo-tag 实际已随 github-pages 自动生效（主题 layout 中已调用 seo 标签），
   # 此处显式声明只为明确依赖；本地用 bundler 构建时也需要它
   - jekyll-seo-tag
   # sitemap 此前未生效（线上 /sitemap.xml 为 404），必须显式声明

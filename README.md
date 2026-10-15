@@ -7,6 +7,7 @@
 ## 笔记目录
 
 - **[git](git/README.md)** — 常用命令速查，含[异常处理](git/ERROR.md)
+- **[GitHub Pages](github-pages/README.md)** — 个人站点从零搭建：域名、HTTPS、SEO
 - **[linux](linux/README.md)** — ssh 免密登录、登录问候语等配置
 - **[MongoDB](mongodb/README.md)** — 身份验证、Mongoose 相关
 - **[nginx](nginx/README.md)** — 编译安装、nginx-sticky 配置

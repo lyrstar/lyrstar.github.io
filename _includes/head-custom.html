@@ -1,6 +1,11 @@
 <!-- 覆盖 slate 主题自带的 _includes/head-custom.html。
-     注意：主题的 _layouts/default.html 中已有 {% seo %}，此处不可重复调用，
-     否则会输出两份 title / description / og 标签。 -->
+
+     注意一：主题的 _layouts/default.html 中已经调用过 seo 标签，
+     此处绝不可再调用一次，否则会输出两份 title / description / og 标签。
+
+     注意二：Liquid 在渲染时不区分 HTML 注释，写在注释里的 Liquid 标签
+     同样会被执行。因此本文件的注释中一律不出现 Liquid 标签字面量，
+     确需说明时请改用 raw 标签包裹。 -->
 
 <!-- 保留主题原有的 Google Analytics 挂载点，避免覆盖后丢失该功能 -->
 {% include head-custom-google-analytics.html %}
