@@ -13,7 +13,7 @@
 
 2. 解压压缩包
     
-    ```cmd
+    ```bash
     
     tar -zxf nginx-1.9.9.tar.gz
     
@@ -25,13 +25,13 @@
    
 3. 安装pcre依赖库
 
-    ```cmd
+    ```bash
     apt-get install libpcre3 libpcre3-dev
     ```
 
 4. 安装nginx
     
-    ```cmd
+    ```bash
     cd nginx-1.9.9
     
     ./configure  --with-http_gzip_static_module --with-http_flv_module --with-http_dav_module --with-http_stub_status_module --with-http_realip_module --add-module=/home/nginx-sticky/
@@ -42,13 +42,13 @@
     ```
 5. 配置nginx+sticky
     
-    ```cmd
+    ```bash
     cd /usr/local/nginx/conf/
     
     vi nginx.conf
     ```
    
-    ```cmd
+    ```nginx
     http {
         upstream test {
             sticky;
@@ -66,13 +66,13 @@
    
 6. 启动nginx
 
-    ```cmd
+    ```bash
     /usr/local/nginx/sbin/nginx
     ```
 
 7. 查询nginx进程
 
-    ```cmd
+    ```bash
     ps -ef | grep nginx
     ```
 
@@ -80,6 +80,6 @@
 
 ## ubuntu配置登录问候语
 
-```cmd
+```bash
 vi /etc/motd
 ```

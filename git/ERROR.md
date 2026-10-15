@@ -5,7 +5,7 @@
 ## 错误
 - 指令
 
-```
+```bash
 git pull
 ```
 
@@ -18,6 +18,6 @@ fatal: Authentication failed for 'https://gitlab.xxx.com/xxx/xxx.git/'
 
 - 解决
 
-```
+```bash
 git config --system --unset credential.helper
 ```

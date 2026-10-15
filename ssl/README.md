@@ -2,7 +2,7 @@
 
 ## openssl 简单的https验证 自签名证书
 
-```cmd
+```bash
 openssl genrsa -out cert.key 2048
 
 openssl req -new -key cert.key -out cert.csr

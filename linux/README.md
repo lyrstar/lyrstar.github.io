@@ -3,7 +3,7 @@
 ## ssh 免密码登录配置
 
 - 主动访问主机生成密钥文件
-    ```
+    ```bash
     ssh-keygen -t rsa -P ''
     ```
 - 将生成的 id_rsa.pub 文件内容追加到远程主机 ~/.ssh/authorized_keys 文件末尾(另起一行)
@@ -13,6 +13,6 @@
 
 ## ubuntu配置登录问候语
 
-```cmd
+```bash
 vi /etc/motd
 ```

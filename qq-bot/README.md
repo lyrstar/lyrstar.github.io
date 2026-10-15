@@ -33,7 +33,7 @@
 
 - 安装
 
-```cmd
+```bash
 npm i qq-bot-sdk
 ```
 

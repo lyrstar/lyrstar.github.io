@@ -1,14 +1,41 @@
 theme: jekyll-theme-slate
 
-# Site settings
-title: Lyrstar的学习笔记  #home 页面 博客标题
-SEOTitle: Lyrstar的学习笔记 | Lyrstar Note #浏览器显示标签&名称
-# header-img: img/home-bg.jpg # home 页面 名称
-email: rrlyrstar@163.com  #邮箱
+# ===== 站点基本信息 =====
+# title 与 description 会被 slate 主题的页头直接渲染
+title: Lyrstar的学习笔记
 description: "水善利万物而不争，处众人之所恶，故几于道。"
-keyword: "lyrstar, note"
-url: "https://lyrstar.github.io/"          # 博客地址
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/lyrstar/lyrstar.github.io.git" # 博客地址
 
-github_username: lyrstar
+# url 必须与 CNAME 中的自定义域名保持一致，
+# 否则 jekyll-seo-tag 生成的 canonical 链接和 sitemap 会指向错误域名
+url: "https://www.lyrstar.com"
+baseurl: ""
+
+# 中文站点需显式声明语言，影响 <html lang> 以及搜索引擎的语言判定
+lang: zh-CN
+
+# ===== 作者信息（jekyll-seo-tag 读取） =====
+author: lyrstar
+email: rrlyrstar@163.com
+
+# ===== 插件 =====
+# GitHub Pages 已默认启用 jekyll-readme-index（README.md 作为目录首页）
+# 和 jekyll-relative-links（.md 相对链接自动转为站内链接），此处无需重复声明。
+plugins:
+  # seo-tag 实际已随 github-pages 自动生效（主题 layout 中已调用 {% seo %}），
+  # 此处显式声明只为明确依赖；本地用 bundler 构建时也需要它
+  - jekyll-seo-tag
+  # sitemap 此前未生效（线上 /sitemap.xml 为 404），必须显式声明
+  - jekyll-sitemap
+
+# ===== Markdown 渲染 =====
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# ===== 排除项 =====
+exclude:
+  - .idea
+  - Gemfile
+  - Gemfile.lock
+  - vendor

@@ -7,97 +7,127 @@
 
 ### 检出仓库
 
-    git clone <repo>
+```bash
+git clone <repo>
+```
 
 ### 拉取远程仓库
 
-    git pull [remoteName] [localBranchName]
+```bash
+git pull [remoteName] [localBranchName]
+```
 
 ### 推送远程仓库
 
-    git push [remoteName] [localBranchName]
+```bash
+git push [remoteName] [localBranchName]
+```
 
 ### 查看本地分支
 
-    git branch
+```bash
+git branch
+```
 
 ### 查看远程分支
 
-    git branch -r
+```bash
+git branch -r
+```
 
 ### 查看工作目录和暂存区的状态
 
-    git status
-    
+```bash
+git status
+```
+
 ### 显示修改的内容
 
-    git diff
+```bash
+git diff
+```
 
 ### 将更改加入到暂存区
 
-    git add <filename>
+```bash
+git add <filename>
+```
 
 ### 将暂存区提交到仓库区
 
-    git commit
+```bash
+git commit
+```
 
 ### 查看历史日志
 
-    git log
+```bash
+git log
+```
 
 ### 还原一个版本的修改
 
-    git revert
-    
+```bash
+git revert
+```
+
 ### 将暂存区的文件取消暂存
 
-    git reset
+```bash
+git reset
+```
 
 ### 将暂存区的文件切换到指定版本
 
-    git reset --hard version
+```bash
+git reset --hard version
+```
 
 ### 新增、更改Git设置
 
-    git config
+```bash
+git config
+```
 
 - 查看用户名
-    
-    ```cmd
+
+    ```bash
     git config --global user.name
     ```
 
 - 修改用户名
-    
-    ```cmd
+
+    ```bash
     git config --global user.name "username"
     ```
 
 - 查看邮箱
-    
-    ```cmd
+
+    ```bash
     git config --global user.email
     ```
 
 - 修改邮箱
-    
-    ```cmd
+
+    ```bash
     git config --global user.email example@example.com
     ```
 
 - 查看配置列表
-    
-    ```cmd
+
+    ```bash
     git config --list
     ```
 
 - 保存密码
-    
-    ```cmd
+
+    ```bash
     git config --global credential.helper store
     ```
 
 ### 丢弃你在本地的所有改动与提交
 
-    git fetch origin
-    git reset --hard origin/master
+```bash
+git fetch origin
+git reset --hard origin/master
+```
