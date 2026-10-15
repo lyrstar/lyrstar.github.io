@@ -1,10 +1,10 @@
 # lyrstar.github.io
 
-[![Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-brightgreen)](https://www.lyrstar.com)
+[![Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-brightgreen)](https://note.lyrstar.com)
 
 日常踩坑与命令速查的归档，便于随时翻阅。
 
-**在线访问：[www.lyrstar.com](https://www.lyrstar.com)**
+**在线访问：[note.lyrstar.com](https://note.lyrstar.com)**
 
 基于 [Jekyll](https://jekyllrb.com/) + [just-the-docs](https://github.com/just-the-docs/just-the-docs) 主题，由 GitHub Pages 自动构建部署。
 
@@ -19,7 +19,7 @@
 | [nginx](nginx/index.md) | 编译安装、nginx-sticky 配置 |
 | [ssl](ssl/index.md) | openssl 自签名证书 |
 | [mongodb](mongodb/index.md) | 身份验证、Mongoose 相关 |
-| [github-pages](github-pages/index.md) | 个人站点从零搭建：域名、HTTPS、SEO |
+| [github-pages](github-pages/index.md) | 个人站点从零搭建：仓库、域名、HTTPS、SEO<br>· [slate 主题](github-pages/slate/index.md)<br>· [just-the-docs 主题](github-pages/just-the-docs/index.md) |
 | [qq-bot](qq-bot/index.md) | QQ 开放平台与各语言 SDK 入口 |
 
 ## 目录结构
@@ -34,7 +34,9 @@
 ├── README.md                # 仓库说明（已 exclude，不参与建站）
 ├── robots.txt
 └── <分类>/
-    └── index.md             # 该分类笔记，输出为 /<分类>/
+    ├── index.md             # 该分类笔记，输出为 /<分类>/
+    └── <子分类>/
+        └── index.md         # 子页，需在 front matter 声明 parent
 ```
 
 ## 新增一篇笔记

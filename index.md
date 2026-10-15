@@ -31,5 +31,7 @@ nav_order: 1
 
 ### 其他
 
-- [**GitHub Pages**](github-pages/) — 个人站点从零搭建：域名、HTTPS、SEO
+- [**GitHub Pages**](github-pages/) — 个人站点从零搭建：仓库、域名、HTTPS、SEO
+  - [slate 主题](github-pages/slate/) — 官方主题，单页站点够用
+  - [just-the-docs 主题](github-pages/just-the-docs/) — 文档主题，自带导航树与全文搜索
 - [**QQ机器人**](qq-bot/) — QQ 开放平台与各语言 SDK 入口

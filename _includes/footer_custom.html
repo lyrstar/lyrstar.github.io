@@ -1,0 +1,20 @@
+{%- comment -%}
+  覆盖 just-the-docs 自带的 footer_custom.html（上游实现仅输出 site.footer_content）。
+  覆盖而非新增，是因为主题只在这一个 include 点暴露正文页脚；
+  若另起文件名则不会被 components/footer.html 包含。
+
+  站点托管于 GitHub Pages（境外服务器），无境内接入服务商，
+  工信部备案系统无提交入口，故此处不含任何 ICP / 公安备案信息。
+{%- endcomment -%}
+
+{%- if site.footer_content -%}
+  <p class="text-small text-grey-dk-100 mb-0">{{ site.footer_content }}</p>
+{%- endif -%}
+
+{%- if site.content_license_name and site.content_license_url -%}
+  <p class="text-small text-grey-dk-100 mb-0">
+    本站原创内容采用
+    <a href="{{ site.content_license_url }}" rel="license noopener" target="_blank">{{ site.content_license_name }}</a>
+    许可协议，转载请保留出处与原文链接；文中命令与代码片段可自由使用，无需署名。
+  </p>
+{%- endif -%}

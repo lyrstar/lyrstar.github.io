@@ -8,7 +8,7 @@ description: "水善利万物而不争，处众人之所恶，故几于道。"
 
 # url 必须与 CNAME 中的自定义域名保持一致，
 # 否则 jekyll-seo-tag 生成的 canonical 链接和 sitemap 会指向错误域名
-url: "https://www.lyrstar.com"
+url: "https://note.lyrstar.com"
 baseurl: ""
 
 # 中文站点需显式声明语言，影响 <html lang> 以及搜索引擎的语言判定
@@ -63,6 +63,14 @@ gh_edit_view_mode: "edit"
 
 # 页脚
 footer_content: "Copyright &copy; 2024-2026 lyrstar. 日常踩坑与命令速查的归档。"
+
+# 内容许可协议：由 _includes/footer_custom.html 读取并渲染成页脚的许可声明。
+# 两个键必须同时存在，缺任一个则整条声明不输出（避免出现没有链接的裸协议名）。
+# 想换协议只需改这两行，例如允许商用改为 CC BY 4.0：
+#   content_license_name: "CC BY 4.0"
+#   content_license_url: "https://creativecommons.org/licenses/by/4.0/deed.zh-hans"
+content_license_name: "CC BY-NC-SA 4.0"
+content_license_url: "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"
 # 不开启 last_edit_timestamp：它依赖 jekyll-last-modified-at，
 # 该插件不在 GitHub Pages 的插件白名单内，开了也不会生效。
 

@@ -2,12 +2,13 @@
 title: GitHub Pages
 layout: default
 nav_order: 7
+has_children: true
 ---
 
 # GitHub Pages
 {: .no_toc }
 
-个人站点从零搭建：域名、HTTPS、SEO。
+个人站点从零搭建：仓库、域名、HTTPS、SEO。
 {: .fs-5 .fw-300 }
 
 <details open markdown="block">
@@ -16,6 +17,8 @@ nav_order: 7
 - TOC
 {:toc}
 </details>
+
+本篇只讲平台本身，与具体主题无关。样式另见子页：[slate](slate/) · [just-the-docs](just-the-docs/)。
 
 ## 官网
 
@@ -41,9 +44,10 @@ nav_order: 7
 
 个人博客/主页选 user page，软件项目的文档站选 project page。
 
-> 踩坑：部分主题（如 slate）把「View on GitHub」角标和页脚版权包在 `is_project_page` 条件里，
+> 踩坑：部分主题把「View on GitHub」角标和页脚版权包在 `is_project_page` 条件里，
 > 因此 user page 上这些元素**不会显示**。这不是数据缺失（`site.github.*` 元数据在
-> user page 上同样正常填充），只是条件判断挡住了渲染。不要为了显示角标而把仓库
+> user page 上同样正常填充），只是条件判断挡住了渲染（slate 即是如此，详见
+> [slate 篇](slate/#user-page-上不显示-github-角标)）。不要为了显示角标而把仓库
 > 改成 project page，代价是地址结构、域名和证书全部要重配。
 
 ***
@@ -63,22 +67,40 @@ nav_order: 7
 
 ## 选择主题
 
-最省事的方式是用 GitHub 官方托管的主题，只需在 `_config.yml` 中声明一行，无需把主题文件放进仓库：
+有两条路线，取决于想用的主题是否在 GitHub 官方列表中。
+
+| | 官方托管主题 | 第三方主题 |
+|---|---|---|
+| 配置字段 | `theme:` | `remote_theme:` |
+| 可选范围 | [pages-themes](https://github.com/pages-themes) 下的十来个 | 任意 GitHub 仓库 |
+| 额外插件 | 不需要 | 视主题而定 |
+| 典型代表 | slate、minimal、cayman | just-the-docs、minimal-mistakes |
 
 ```yaml
+# 官方主题：一行即可，主题文件无需放进仓库
 theme: jekyll-theme-slate
+
+# 第三方主题：从指定仓库拉取，建议锁版本号
+remote_theme: just-the-docs/just-the-docs@v0.10.1
 ```
 
-官方主题仓库在 [pages-themes](https://github.com/pages-themes)，可直接查看其 `_layouts` 和 `_sass`
-以了解可用的配置项和 CSS 选择器。
+`remote_theme` 由 `jekyll-remote-theme` 插件提供，该插件在 GitHub Pages 上默认启用，无需声明。
+
+> 不建议直接把整个主题的文件复制进仓库 —— 后续无法跟随上游更新，
+> 且主题自带的 `_sass`、`_layouts` 会和你自己的改动混在一起。
+
+本站两个主题的详细配置与踩坑：
+
+- [**slate**](slate/) — 官方主题，单页站点够用，无导航无搜索
+- [**just-the-docs**](just-the-docs/) — 文档主题，自带导航树、全文搜索、暗色模式
 
 ***
 
 ## 配置 _config.yml
 
-```yaml
-theme: jekyll-theme-slate
+以下是与主题无关的通用配置：
 
+```yaml
 # 多数主题会把 title 和 description 渲染到页头
 title: 站点标题
 description: "站点描述"
@@ -101,6 +123,11 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
 ```
 
 > 踩坑：`url` 写成 `https://example.com/`（带结尾斜杠）且 `baseurl` 为空时，
@@ -125,28 +152,23 @@ GitHub Pages 只允许使用[白名单插件](https://pages.github.com/versions/
 
 ***
 
-## 用 README.md 组织多级笔记
+## 组织多级笔记
 
-依靠上面两个默认插件，无需写任何 front matter 即可形成多级目录结构：
+两条路线的做法完全不同，取决于主题是否自带导航：
 
-```
-├── README.md          → 首页
-├── git/
-│   └── README.md      → /git/
-└── linux/
-    └── README.md      → /linux/
-```
+| | 靠默认插件（如 slate） | 靠 front matter（如 just-the-docs） |
+|---|---|---|
+| 文件名 | `README.md` | `index.md` |
+| front matter | 不需要 | 每页都要写 |
+| 页间跳转 | 正文顶部手写链接 | 主题侧边栏自动生成 |
+| 仓库内预览 | 有（README 特性） | 无 |
 
-链接直接写相对路径指向 `.md` 文件，`jekyll-relative-links` 会改写为站内链接：
+具体写法见 [slate](slate/#组织多级笔记) 与 [just-the-docs](just-the-docs/#导航体系) 两篇。
 
-```markdown
-- [git](git/README.md)
-```
+无论哪种，有一条共通的坑：
 
-渲染结果为 `<a href="/git/">git</a>`。
-
-> 注意：直接访问 `/git/README.md` 虽然返回 200，但 `Content-Type` 是 `text/markdown`，
-> 浏览器拿到的是**未渲染的源文件**。应当让链接指向目录形式的 `/git/`。
+> 直接访问 `/git/README.md` 虽然返回 200，但 `Content-Type` 是 `text/markdown`，
+> 浏览器拿到的是**未渲染的源文件**。站内链接应当指向目录形式的 `/git/`。
 
 ***
 
@@ -219,27 +241,29 @@ echo | openssl s_client -servername <你的域名> -connect <你的域名>:443 2
 
 ## 自定义主题样式
 
-不建议直接复制整个主题。官方主题都提供了 `_includes/head-custom.html` 作为扩展点，
+不建议直接复制整个主题。多数主题都提供 `_includes/head-custom.html` 作为扩展点，
 在自己仓库中建同名文件即可覆盖，内容会被注入到 `<head>`：
 
 ```html
-{% raw %}{% include head-custom-google-analytics.html %}{% endraw %}
-
 <style>
   /* 自定义样式，选择器需与主题实际结构一致 */
 </style>
 ```
 
-两个关键细节：
+三个关键细节：
 
-- 覆盖后主题原有的内容会整体失效，如需保留其中的挂载点要自己再 include 一遍
-- 修改样式前先查看主题的 `_sass` 文件确认选择器，不要凭猜测。
-  例如 slate 的内容区容器 id 是 `main_content`（下划线），写成 `main-content` 不会匹配
+- 覆盖后主题原有的内容会整体失效，如需保留其中的挂载点（如 Google Analytics）要自己再 include 一遍
+- **改样式前先查主题的 `_sass` 或 `_layouts` 确认选择器，不要凭猜测。**
+  各主题命名互不通用 —— slate 是 `#main_content`（下划线 id），just-the-docs 是 `.main-content`（连字符 class）。
+  写错不会报错，页面照常渲染，只是样式一条都不生效
+- 中文站点通常都要补字体栈，多数主题的默认字体栈不含中文字体
 
 > 踩坑：**Liquid 在渲染时不区分 HTML 注释，写在 `<!-- -->` 里的 Liquid 标签同样会被执行。**
 > 若在注释中提到某个标签名用于说明，会导致该标签被真正调用。
 > 典型后果是主题 layout 已调用过的 seo 标签被重复执行，页面输出两份 title 和 og 标签。
 > 确需在注释里写标签字面量时，用 `raw` 标签包裹。
+
+各主题的具体样式覆盖示例见 [slate](slate/#中文适配) 与 [just-the-docs](just-the-docs/#中文适配)。
 
 ***
 
