@@ -11,7 +11,6 @@ nav_order: 1
 {: .fs-5 .fw-300 }
 
 [开始翻阅](git/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[在 GitHub 上查看](https://github.com/lyrstar/lyrstar.github.io){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
