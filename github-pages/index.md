@@ -1,4 +1,21 @@
-- [回到首页](../README.md)
+---
+title: GitHub Pages
+layout: default
+nav_order: 7
+---
+
+# GitHub Pages
+{: .no_toc }
+
+个人站点从零搭建：域名、HTTPS、SEO。
+{: .fs-5 .fw-300 }
+
+<details open markdown="block">
+  <summary>目录</summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 ## 官网
 
@@ -195,7 +212,7 @@ echo | openssl s_client -servername <你的域名> -connect <你的域名>:443 2
   | openssl x509 -noout -subject -issuer -dates
 ```
 
-> 区别于自签名证书：[openssl 自签名](../ssl/README.md)适用于本地或内网测试，浏览器会提示不受信任；
+> 区别于自签名证书：[openssl 自签名](../ssl/)适用于本地或内网测试，浏览器会提示不受信任；
 > GitHub Pages 这种是 CA 签发的受信任证书，全自动，两者不要混用。
 
 ***

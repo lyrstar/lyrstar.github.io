@@ -1,5 +1,22 @@
-- [回到首页](../README.md)
-- [git异常处理](./ERROR.md)
+---
+title: git
+layout: default
+nav_order: 2
+has_children: true
+---
+
+# git
+{: .no_toc }
+
+常用命令速查。
+{: .fs-5 .fw-300 }
+
+<details open markdown="block">
+  <summary>目录</summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 ## 官网
 

@@ -1,7 +1,8 @@
-theme: jekyll-theme-slate
+# just-the-docs 在 GitHub Pages 上不属于官方支持主题，不能用 theme 字段，
+# 必须走 remote_theme 从仓库拉取。@v0.10.1 固定版本，避免上游更新后样式突变。
+remote_theme: just-the-docs/just-the-docs@v0.10.1
 
 # ===== 站点基本信息 =====
-# title 与 description 会被 slate 主题的页头直接渲染
 title: Lyrstar的学习笔记
 description: "水善利万物而不争，处众人之所恶，故几于道。"
 
@@ -18,14 +19,56 @@ author: lyrstar
 email: rrlyrstar@163.com
 
 # ===== 插件 =====
-# GitHub Pages 已默认启用 jekyll-readme-index（README.md 作为目录首页）
-# 和 jekyll-relative-links（.md 相对链接自动转为站内链接），此处无需重复声明。
 plugins:
-  # seo-tag 实际已随 github-pages 自动生效（主题 layout 中已调用 seo 标签），
-  # 此处显式声明只为明确依赖；本地用 bundler 构建时也需要它
+  # just-the-docs 的 _layouts 内部使用了 include_cached，缺少该插件会直接构建失败
+  - jekyll-include-cache
   - jekyll-seo-tag
   # sitemap 此前未生效（线上 /sitemap.xml 为 404），必须显式声明
   - jekyll-sitemap
+
+# ===== 主题外观 =====
+# 默认亮色；下方 enable_copy_code_button 等均为主题自带能力
+color_scheme: light
+
+# ===== 搜索 =====
+# just-the-docs 自带纯前端全文搜索（构建期生成 search-data.json，无需外部服务）
+search_enabled: true
+search:
+  # 分词分隔符：默认会把 `/` 之外的符号也当分隔符，
+  # 这里保留空格和斜杠分词，使 `ssh-keygen` 这类带连字符的命令能整体命中
+  tokenizer_separator: /[\s/]+/
+  # 搜索结果中显示所属标题层级与正文预览
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  rel_url: true
+  button: false
+
+# 代码块右上角的一键复制按钮；本站内容以命令速查为主，这个很实用
+enable_copy_code_button: true
+
+# 正文右上角「在 GitHub 上编辑此页」链接
+aux_links:
+  "在 GitHub 上查看":
+    - "https://github.com/lyrstar/lyrstar.github.io"
+aux_links_new_tab: true
+
+# 每页底部显示「编辑此页」
+gh_edit_link: true
+gh_edit_link_text: "在 GitHub 上编辑此页"
+gh_edit_repository: "https://github.com/lyrstar/lyrstar.github.io"
+gh_edit_branch: "master"
+gh_edit_view_mode: "edit"
+
+# 页脚
+footer_content: "Copyright &copy; 2024-2026 lyrstar. 日常踩坑与命令速查的归档。"
+# 不开启 last_edit_timestamp：它依赖 jekyll-last-modified-at，
+# 该插件不在 GitHub Pages 的插件白名单内，开了也不会生效。
+
+# 侧边栏底部的「返回顶部」
+back_to_top: true
+back_to_top_text: "返回顶部"
 
 # ===== Markdown 渲染 =====
 markdown: kramdown
@@ -35,6 +78,10 @@ kramdown:
 
 # ===== 排除项 =====
 exclude:
+  # README.md 只作仓库说明，不参与建站。
+  # 必须排除：GitHub Pages 默认启用 jekyll-readme-index，它会把 README.md
+  # 渲染为目录的 index.html，与根目录已有的 index.md 抢同一个输出路径。
+  - README.md
   - .idea
   - Gemfile
   - Gemfile.lock

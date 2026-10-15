@@ -1,4 +1,21 @@
-- [回到首页](../README.md)
+---
+title: nginx
+layout: default
+nav_order: 4
+---
+
+# nginx
+{: .no_toc }
+
+编译安装、nginx-sticky 配置。
+{: .fs-5 .fw-300 }
+
+<details open markdown="block">
+  <summary>目录</summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 ## 官网
 

@@ -1,4 +1,21 @@
-- [回到首页](../README.md)
+---
+title: QQ机器人
+layout: default
+nav_order: 8
+---
+
+# QQ 机器人
+{: .no_toc }
+
+QQ 开放平台与各语言 SDK 入口。
+{: .fs-5 .fw-300 }
+
+<details open markdown="block">
+  <summary>目录</summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 ## QQ开放平台
 
